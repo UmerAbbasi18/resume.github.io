@@ -1,0 +1,129 @@
+/* ----------
+  Hassan Ahmed — Resume Styles
+  - Clean, print-friendly, responsive.
+  ---------- */
+:root{
+  --text: #0f172a;
+  --muted: #475569;
+  --bg: #ffffff;
+  --accent: #0ea5e9;
+  --border: #e2e8f0;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.6;
+}
+.page{
+  max-width: 980px;
+  margin: 40px auto;
+  padding: 0 24px;
+}
+.header{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap: 16px;
+  padding-bottom: 18px;
+  border-bottom: 2px solid var(--border);
+}
+.identity h1{
+  font-size: clamp(28px, 4vw, 40px);
+  line-height:1.1;
+  margin:0 0 4px 0;
+}
+.role{
+  margin:0;
+  color:var(--muted);
+  font-weight:600;
+}
+.contact{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  gap:6px;
+}
+.contact a{
+  color:inherit;
+  text-decoration:none;
+  border-bottom:1px dotted var(--border);
+}
+.contact a:hover{border-color:var(--accent)}
+section{padding:22px 0}
+h2{
+  margin:0 0 10px 0;
+  font-size: 20px;
+  letter-spacing:.2px;
+  text-transform:uppercase;
+}
+.summary p{margin:0}
+.experience .job{
+  padding:14px 0;
+  border-bottom:1px solid var(--border);
+}
+.experience .job:last-child{border-bottom:none}
+.job header{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+.job h3{
+  margin:0;
+  font-size:18px;
+}
+.meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  color:var(--muted);
+  font-size:14px;
+}
+.client{
+  color:var(--muted);
+  font-style:italic;
+}
+.job ul{
+  margin:8px 0 0 0;
+  padding-left:18px;
+}
+.education .meta{
+  margin-top:4px;
+}
+.skills-grid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap:14px;
+}
+.skills-grid h4{
+  margin:0 0 4px 0;
+  font-size:14px;
+  text-transform:uppercase;
+  letter-spacing:.3px;
+  color:var(--muted);
+}
+.bulleted{
+  margin:0;
+  padding-left:18px;
+}
+.footer{
+  margin-top: 8px;
+  padding-top: 12px;
+  border-top: 2px solid var(--border);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Print styles */
+@media print{
+  :root{ --text:#000; --muted:#333; --border:#ddd; }
+  .page{ max-width: unset; margin:0; padding:0 8mm; }
+  a{ text-decoration: none; color: inherit; }
+  .header{ border-bottom: 1px solid var(--border); }
+  .footer{ border-top: 1px solid var(--border); }
+}
